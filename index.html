@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Trail Running Plan Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://rsms.me/inter/inter.css');
+      html { font-family: 'Inter', sans-serif; }
+
+      /* This class hides elements on screen by default. */
+      .hidden-on-screen {
+        display: none;
+      }
+
+      @media print {
+        /* This rule ensures elements hidden for screen view are visible when printing */
+        .hidden-on-screen {
+            display: block !important;
+        }
+
+        /* Hide non-essential elements */
+        header, footer, .no-print {
+          display: none !important;
+        }
+
+        /* Set base styles for printing */
+        body {
+          background-color: white !important;
+        }
+        .printable-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        /* Force all backgrounds to be light and text to be dark for readability */
+        .printable-area, .printable-area * {
+          background-color: white !important;
+          color: black !important;
+          box-shadow: none !important;
+          text-shadow: none !important;
+          border-color: #ccc !important;
+        }
+
+        /* Specific styles for printed cards */
+        .card-print {
+          border: 1px solid #ccc !important;
+          page-break-inside: avoid;
+        }
+        .weekly-schedule-card {
+          page-break-before: auto;
+        }
+        .text-cyan-400 {
+          font-weight: bold;
+        }
+
+        /* Restore grid layout for session cards to allow wrapping */
+        .weekly-grid {
+          display: grid !important;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+          gap: 0.5rem;
+        }
+
+        /* Ensure table headers display correctly */
+        thead {
+          display: table-header-group;
+        }
+        tr {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.7.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-900 text-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

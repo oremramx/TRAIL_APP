@@ -1,0 +1,6 @@
+{
+  "name": "2.0 Generador de Planes de Trail Running con ORMTRAINING (Integrar APP)",
+  "description": "Una aplicación inteligente que genera planes de entrenamiento de trail running personalizados basados en los datos específicos del usuario y los objetivos de la carrera, utilizando una metodología de entrenamiento detallada y contrastada.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
